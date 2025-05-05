@@ -72,7 +72,6 @@
 
 .card__title {
   padding: 3.5px 10px 5.5px 10px;
-  font-weight: var(--title-font-weight);
   font-size: 18px;
 }
 
@@ -82,10 +81,14 @@
 
 .card__image {
   display: flex;
+  flex-direction: column;
   position: relative;
   object-fit: cover;
   min-inline-size: 100%;
   aspect-ratio: 1;
+  border: solid #000;
+  border-width: 2px 0;
+  overflow: hidden;
 }
 
 .card__image-label {
@@ -139,7 +142,7 @@
   mix-blend-mode: difference;
   cursor: pointer;
   background-color: var(--background-color);
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease;
 }
 
 .button__text-decor:focus {
@@ -195,7 +198,7 @@
 }
 
 .main-body {
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .core {
@@ -208,7 +211,7 @@
 
 .like-icon:hover .core {
   fill: var(--contour-color);
-  transition-delay: 0.03s;
+  transition-delay: 0s;
 }
 
 .like-icon:hover .main-body {
@@ -219,7 +222,7 @@
 .like-icon:active .core,
 .like-icon.is-liked .core {
   fill: var(--fill-color);
-  transition-delay: 0.03s;
+  transition-delay: 0s;
 }
 
 .like-icon:active .main-body,
@@ -233,21 +236,9 @@
   transition: fill 0.3s linear 0.06s;
 }
 
-@keyframes like-icon-scale {
-  to {
-    transform: scale(1.25);
-  }
-}
-
 .like-icon.is-liked .heart {
   transform-origin: center;
   animation: like-icon-scale 0.3s 0.1s ease-in;
-}
-
-@keyframes like-icon-sparks {
-  to {
-    opacity: 1;
-  }
 }
 
 .like-icon.is-liked .sparks {
@@ -352,8 +343,8 @@
   row-gap: 30px;
   padding: 30px;
   inline-size: clamp(21.313rem, 20.96rem + 1.5vw, 22.313rem);
-  block-size: clamp(11.938rem, 11.893rem + 0.19vw, 12.063rem);
   border: 2px solid var(--border-color);
+  overflow-y: hidden;
 }
 
 .dialog[open]::backdrop {
@@ -375,4 +366,5 @@
   grid-column: 1 / -1;
   padding: 9px 0;
   filter: invert(1);
+  border: 2px solid;
 }
