@@ -73,6 +73,7 @@
 .card__title {
   padding: 3.5px 10px 5.5px 10px;
   font-size: 18px;
+  font-variation-settings: "wght" var(--title-font-weight);
 }
 
 .title-decor {
@@ -198,11 +199,11 @@
 }
 
 .main-body {
-  transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear;
 }
 
 .core {
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .sparks {
@@ -257,6 +258,7 @@
   position: relative;
   font-family: var(--accent-font-family);
   font-size: 14px;
+  border: 2px solid var(--border-color);
   display: flex;
   justify-content: start;
   align-items: center;
@@ -344,7 +346,7 @@
   padding: 30px;
   inline-size: clamp(21.313rem, 20.96rem + 1.5vw, 22.313rem);
   border: 2px solid var(--border-color);
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .dialog[open]::backdrop {
